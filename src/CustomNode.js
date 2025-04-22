@@ -47,7 +47,7 @@ const CustomNode = ({
               className={styles.toggleCollapseBtn}
               onClick={(e) => {
                 e.stopPropagation(); // Prevent triggering node click
-                onToggleCollapse(nodeDatum.id);
+                onToggleCollapse(id);
               }}
             >
               {isCollapsed ? '➕' : '➖'}
