@@ -98,7 +98,7 @@ const OrgChart = () => {
     // Highlight + show sidebar
     setSelectedEmployeeId(id);
     setHighlightedNodeId(id);
-}, [data]);
+  }, [data]);
 
   // Stable callback to handle clicks
   const handleNodeClick = useCallback((nodeDatum) => {
