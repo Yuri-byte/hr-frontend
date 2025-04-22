@@ -119,7 +119,6 @@ const OrgChart = () => {
         <div className={styles.title}>People</div>
         <div className={styles.actions}>
           <span className={styles.total}>Total: {employeeCount}</span>
-          <button className={styles.filterButton}>Filters</button>
           <button 
             className={styles.directoryButton}
             onClick={() => setShowDirectory(prev => !prev)}

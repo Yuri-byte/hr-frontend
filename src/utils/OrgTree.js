@@ -31,7 +31,6 @@ const convertToD3Format = (employee) => ({
   id: employee.id,
   name: employee.name,
   attributes: { role: employee.role },
-  photo_url: employee.photo_url,
   children: employee.children?.map(convertToD3Format) || [],
   hasChildren: employee.children && employee.children.length > 0,
 });
