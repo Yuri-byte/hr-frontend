@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import EmployeeDetailModal from './EmployeeDetailModal';
 import './styles/Sidebar.css';
 
 const sidebarVariants = {
@@ -8,6 +10,8 @@ const sidebarVariants = {
 };
 
 const EmployeeSidebar = ({ employee, onClose }) => {
+  const [showModal, setShowModal] = useState(false);
+  
   if (!employee) return null;
 
   const fullName = `${employee.first_name} ${employee.last_name}`;
@@ -33,7 +37,17 @@ const EmployeeSidebar = ({ employee, onClose }) => {
         <p><strong>Date Joined:</strong> {dateJoined}</p>
         <p><strong>Status:</strong> {employee.status}</p>
         <p><strong>Salary:</strong> {salary}</p>
+
+        <button className="show-more-btn" onClick={() => setShowModal(true)}>
+          Show More
+        </button>
       </div>
+      {showModal && (
+        <EmployeeDetailModal
+          employee={employee}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </motion.div>
   );
 };

@@ -61,3 +61,20 @@
   letter-spacing: 0.04em;
   margin-bottom: 0.15rem;
 }
+
+.show-more-btn {
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+  padding: 0.6rem 1rem;
+  background-color: #3949ab;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #303f9f;
+}
