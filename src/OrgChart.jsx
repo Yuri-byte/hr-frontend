@@ -6,6 +6,7 @@ import styles from './styles/OrgChart.module.css';
 import EmployeeSidebar from './EmployeeSidebar';
 import DirectoryPanel from './DirectoryPanel';
 import { AnimatePresence } from 'framer-motion';
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 
 const OrgChart = () => {
@@ -21,7 +22,7 @@ const OrgChart = () => {
   const [dimensions, setDimensions] = useState(null);
 
   useEffect(() => {
-    fetch('https://hr-portfolio-luil.onrender.com/api/employees/tree/')
+    fetch(`${API_BASE}/api/employees/tree/`)
       .then(res => res.json())
       .then(tree => {
         const formatted = convertToD3Format(tree);
@@ -32,7 +33,7 @@ const OrgChart = () => {
   useEffect(() => {
     if (!selectedEmployeeId) return;
   
-    fetch(`https://hr-portfolio-luil.onrender.com/api/employees/${selectedEmployeeId}/`)
+    fetch(`${API_BASE}/api/employees/${selectedEmployeeId}/`)
       .then(res => res.json())
       .then(setSelectedEmployeeDetails)
       .catch(err => {
