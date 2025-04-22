@@ -21,7 +21,7 @@ const OrgChart = () => {
   const [dimensions, setDimensions] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/employees/tree/')
+    fetch('https://hr-portfolio-luil.onrender.com/api/employees/tree/')
       .then(res => res.json())
       .then(tree => {
         const formatted = convertToD3Format(tree);
@@ -32,7 +32,7 @@ const OrgChart = () => {
   useEffect(() => {
     if (!selectedEmployeeId) return;
   
-    fetch(`http://localhost:8000/api/employees/${selectedEmployeeId}/`)
+    fetch(`https://hr-portfolio-luil.onrender.com/api/employees/${selectedEmployeeId}/`)
       .then(res => res.json())
       .then(setSelectedEmployeeDetails)
       .catch(err => {
