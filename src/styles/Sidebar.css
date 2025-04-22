@@ -1,5 +1,5 @@
 .sidebar-wrapper {
-  /* width: 360px; */
+  min-width: 450px;
   background-color: #fefefe;
   border-right: 1px solid #e5e7eb; /* light gray border */
   position: relative;
